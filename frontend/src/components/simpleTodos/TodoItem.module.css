@@ -1,0 +1,23 @@
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  margin: 1rem 0;
+}
+
+.work {
+  background-color: #d77a61;
+}
+
+.study {
+  background-color: #9bc59d;
+}
+
+.personal {
+  background-color: #d0fcb3;
+}
+
+.other {
+  background-color: white;
+}

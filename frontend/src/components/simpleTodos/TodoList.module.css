@@ -1,0 +1,13 @@
+.card {
+  background-color: #e6fcfc;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+}
+
+.tasks__fallback {
+  color: white;
+  text-align: center;
+}
