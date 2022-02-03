@@ -1,11 +1,11 @@
 import Card from "../UI/Card";
-import classes from "./TodoItem.module.css";
+import classes from "./SearchItem.module.css";
 import Button from "../UI/Button";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { todoActions } from "../../store/todo";
 
-const TodoItem = (props) => {
+const SearchItem = (props) => {
   const dispatch = useDispatch();
   const uid = useSelector((state) => {
     return state.auth.localId;
@@ -47,4 +47,4 @@ const TodoItem = (props) => {
   );
 };
 
-export default TodoItem;
+export default SearchItem;

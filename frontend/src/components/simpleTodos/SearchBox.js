@@ -1,12 +1,12 @@
 import { useRef, useState } from "react";
-import classes from "./AddTodo.module.css";
+import classes from "./SearchBox.module.css";
 import Button from "../UI/Button";
 import Card from "../UI/Card";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { todoActions } from "../../store/todo";
 
-const AddTodo = () => {
+const SearchBox = () => {
   const dispatch = useDispatch();
   const uid = useSelector((state) => {
     return state.auth.localId;
@@ -85,4 +85,4 @@ const AddTodo = () => {
   );
 };
 
-export default AddTodo;
+export default SearchBox;

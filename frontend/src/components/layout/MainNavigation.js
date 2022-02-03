@@ -9,7 +9,7 @@ const MainNavigation = () => {
   return (
     <header className={classes.header}>
       <Link to="/" style={{ textDecoration: "none" }}>
-        <div className={classes.logo}>TODO APP</div>
+        <div className={classes.logo}>SEARCH MOVIE APP</div>
       </Link>
       <nav className={classes.nav}>
         <ul>
@@ -18,7 +18,15 @@ const MainNavigation = () => {
               to="/"
               className={(navData) => (navData.isActive ? classes.active : "")}
             >
-              To Do
+              Search
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/history"
+              className={(navData) => (navData.isActive ? classes.active : "")}
+            >
+              History
             </NavLink>
           </li>
           <li>

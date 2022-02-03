@@ -1,12 +1,10 @@
 import React from "react";
-import AddTodo from "../simpleTodos/AddTodo";
-import TodoList from "../simpleTodos/TodoList";
+import SearchRequestField from "../simpleTodos/SearchBox";
 
 const ToDoListPage = () => {
   return (
     <React.Fragment>
-      <AddTodo />
-      <TodoList />
+      <SearchRequestField />
     </React.Fragment>
   );
 };

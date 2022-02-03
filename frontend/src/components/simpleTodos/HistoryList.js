@@ -1,7 +1,7 @@
 import React, { useEffect, useCallback } from "react";
-import classes from "./TodoList.module.css";
+import classes from "./HistoryList.module.css";
 import Card from "../UI/Card";
-import TodoItem from "./TodoItem";
+import TodoItem from "./SearchItem";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { todoActions } from "../../store/todo";
@@ -61,7 +61,12 @@ const TodoList = () => {
     <Card className={classes.card}>
       <ul className={classes.list}>
         {tasks.map((task) => (
-          <TodoItem key={task.id} id={task.id} task={task.value} type={task.type} />
+          <TodoItem
+            key={task.id}
+            id={task.id}
+            task={task.value}
+            type={task.type}
+          />
         ))}
       </ul>
     </Card>

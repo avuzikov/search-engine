@@ -10,19 +10,20 @@ const LoginPage = React.lazy(() => import("./components/pages/LoginPage"));
 const ChangePasswordPage = React.lazy(() =>
   import("./components/pages/ChangePasswordPage")
 );
-const ToDoListPage = React.lazy(() =>
-  import("./components/pages/ToDoListPage")
+const SearchListPage = React.lazy(() =>
+  import("./components/pages/SearchListPage")
 );
 const CreateProfilePage = React.lazy(() =>
   import("./components/pages/CreateProfilePage")
 );
+const HistoryListPage = React.lazy(() => import("./components/pages/HistoryListPage"));
 /* */
 
 function App() {
   useEffect(() => {
     console.log("Will be glad to see you for an interview!");
     console.log(
-      "My github with code of the project: https://github.com/avuzikov/todo"
+      "My github with code of the project: https://github.com/avuzikov/search-engine"
     );
   }, []);
 
@@ -61,7 +62,8 @@ function App() {
         {loggedIn && (
           <Layout>
             <Routes>
-              <Route path="/" element={<ToDoListPage />} />
+              <Route path="/" element={<SearchListPage />} />
+              <Route path="/history" element={<HistoryListPage />} />
               <Route path="/change-password" element={<ChangePasswordPage />} />
               <Route path="*" element={<Navigate to="/" />} />
             </Routes>
