@@ -1,12 +1,12 @@
 import React, { useEffect, useCallback } from "react";
 import classes from "./HistoryList.module.css";
 import Card from "../UI/Card";
-import TodoItem from "./SearchItem";
+import SearchItem from "./SearchItem";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { todoActions } from "../../store/todo";
+import { historyActions } from "../../store/history";
 
-const TodoList = () => {
+const HistoryList = () => {
   const dispatch = useDispatch();
   const uid = useSelector((state) => {
     return state.auth.localId;
@@ -14,63 +14,60 @@ const TodoList = () => {
   const idToken = useSelector((state) => {
     return state.auth.idToken;
   });
-  const todosPath = useSelector((state) => {
-    return state.token.todosPath;
+  const requestsPath = useSelector((state) => {
+    return state.token.requestsPath;
   });
 
   const fetchData = useCallback(async () => {
     try {
-      const response = await fetch(`${todosPath}${uid}.json?auth=${idToken}`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        `${requestsPath}${uid}.json?auth=${idToken}`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       const responseObj = await response.json();
-      const tasks = [];
+      const requests = [];
       for (let key in responseObj) {
-        tasks.push({
+        requests.push({
           id: key,
           value: responseObj[key].value,
-          type: responseObj[key].type,
         });
       }
-      dispatch(todoActions.initialize(tasks));
+      dispatch(historyActions.initialize(requests));
     } catch (err) {
       console.log("Something went wrong");
       console.log(err);
     }
-  }, [dispatch, idToken, todosPath, uid]);
+  }, [dispatch, idToken, requestsPath, uid]);
 
   useEffect(() => {
     fetchData();
   }, [fetchData]);
 
-  const tasks = useSelector((state) => {
-    return state.todo.tasks;
+  const requests = useSelector((state) => {
+    return state.history.requests;
   });
 
-  if (tasks.length === 0) {
+  if (requests.length === 0) {
     return (
       <Card className={classes.card}>
-        <h2 className="tasks__fallback">Found no tasks</h2>
+        <h2 className="tasks__fallback">Found requests</h2>
       </Card>
     );
   }
   return (
     <Card className={classes.card}>
       <ul className={classes.list}>
-        {tasks.map((task) => (
-          <TodoItem
-            key={task.id}
-            id={task.id}
-            task={task.value}
-            type={task.type}
-          />
+        {requests.map((request) => (
+          <SearchItem key={request.id} id={request.id} task={request.value} />
         ))}
       </ul>
     </Card>
   );
 };
 
-export default TodoList;
+export default HistoryList;

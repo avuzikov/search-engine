@@ -2,10 +2,10 @@ import { configureStore } from "@reduxjs/toolkit";
 
 import authReducer from "./auth";
 import tokenReducer from "./token";
-import todoReducer from "./todo";
+import historyReducer from "./history";
 
 const store = configureStore({
-  reducer: { auth: authReducer, token: tokenReducer, todo: todoReducer },
+  reducer: { auth: authReducer, token: tokenReducer, history: historyReducer },
 });
 
 export default store;

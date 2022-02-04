@@ -3,7 +3,7 @@ import classes from "./SearchItem.module.css";
 import Button from "../UI/Button";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { todoActions } from "../../store/todo";
+import { historyActions } from "../../store/history";
 
 const SearchItem = (props) => {
   const dispatch = useDispatch();
@@ -13,15 +13,15 @@ const SearchItem = (props) => {
   const idToken = useSelector((state) => {
     return state.auth.idToken;
   });
-  const todosPath = useSelector((state) => {
-    return state.token.todosPath;
+  const requestsPath = useSelector((state) => {
+    return state.token.requestsPath;
   });
 
   const deleteHandler = async (event) => {
     event.preventDefault();
     try {
       const response = await fetch(
-        `${todosPath}${uid}/${props.id}.json?auth=${idToken}`,
+        `${requestsPath}${uid}/${props.id}.json?auth=${idToken}`,
         {
           method: "DELETE",
           headers: {
@@ -31,7 +31,7 @@ const SearchItem = (props) => {
       );
       const idTask = await response.json();
       console.log(idTask);
-      dispatch(todoActions.removeElement(props.id));
+      dispatch(historyActions.removeElement(props.id));
     } catch (err) {
       console.log("Something went wrong");
       console.log(err);
@@ -39,7 +39,7 @@ const SearchItem = (props) => {
   };
   return (
     <li>
-      <Card className={`${classes.card} ${classes[props.type]}`}>
+      <Card className={`${classes.card} other`}>
         <h2>{props.task}</h2>
         <Button onClick={deleteHandler}>Delete</Button>
       </Card>

@@ -1,10 +1,10 @@
 import React from "react";
-import SearchRequestField from "../simpleTodos/SearchBox";
+import SearchBox from "../requestComponents/SearchBox";
 
 const ToDoListPage = () => {
   return (
     <React.Fragment>
-      <SearchRequestField />
+      <SearchBox />
     </React.Fragment>
   );
 };

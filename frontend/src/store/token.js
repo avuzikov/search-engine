@@ -3,7 +3,8 @@ import token from "./token_secret";
 
 const initialTokenState = {
   token: token,
-  todosPath: "https://search-engine-c4127-default-rtdb.firebaseio.com/todos/",
+  requestsPath:
+    "https://search-engine-c4127-default-rtdb.firebaseio.com/requests/",
   loginUrl:
     "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=",
   signUpUrl: "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=",

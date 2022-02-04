@@ -1,10 +1,10 @@
 import React from "react";
-import TodoList from "../simpleTodos/HistoryList";
+import HistoryList from "../requestComponents/HistoryList";
 
 const HistoryListPage = () => {
   return (
     <React.Fragment>
-      <TodoList />
+      <HistoryList />
     </React.Fragment>
   );
 };
