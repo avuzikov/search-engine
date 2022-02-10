@@ -21,7 +21,6 @@ const HistoryListPage = React.lazy(() => import("./components/pages/HistoryListP
 
 function App() {
   useEffect(() => {
-    console.log("Will be glad to see you for an interview!");
     console.log(
       "My github with code of the project: https://github.com/avuzikov/search-engine"
     );
