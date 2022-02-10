@@ -40,7 +40,7 @@ const SearchItem = (props) => {
   return (
     <li>
       <Card className={`${classes.card} other`}>
-        <h2>{props.task}</h2>
+        <h2>{props.quote}</h2>
         <Button onClick={deleteHandler}>Delete</Button>
       </Card>
     </li>

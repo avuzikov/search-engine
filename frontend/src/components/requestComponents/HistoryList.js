@@ -34,7 +34,7 @@ const HistoryList = () => {
       for (let key in responseObj) {
         requests.push({
           id: key,
-          value: responseObj[key].value,
+          quote: responseObj[key].quote,
         });
       }
       dispatch(historyActions.initialize(requests));
@@ -63,7 +63,7 @@ const HistoryList = () => {
     <Card className={classes.card}>
       <ul className={classes.list}>
         {requests.map((request) => (
-          <SearchItem key={request.id} id={request.id} task={request.value} />
+          <SearchItem key={request.id} id={request.id} quote={request.quote} />
         ))}
       </ul>
     </Card>

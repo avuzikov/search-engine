@@ -21,8 +21,8 @@ const SearchBox = () => {
 
   async function submitHandler(event) {
     event.preventDefault();
-    const value = requestRef.current.value;
-    if (value === "") {
+    const quote = requestRef.current.value;
+    if (quote === "") {
       return;
     }
     try {
@@ -30,7 +30,7 @@ const SearchBox = () => {
         `${requestsPath}${uid}.json?auth=${idToken}`,
         {
           method: "POST",
-          body: JSON.stringify({ value: value }),
+          body: JSON.stringify({ quote: quote }),
           headers: {
             "Content-Type": "application/json",
           },
@@ -38,7 +38,7 @@ const SearchBox = () => {
       );
       const idRequest = await response.json();
 
-      const action = { id: idRequest.name, value: value };
+      const action = { id: idRequest.name, quote: quote };
       dispatch(historyActions.addElement(action));
     } catch (err) {
       console.log("Something went wrong");
