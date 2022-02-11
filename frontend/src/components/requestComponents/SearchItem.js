@@ -41,6 +41,12 @@ const SearchItem = (props) => {
     <li>
       <Card className={`${classes.card} other`}>
         <h2>{props.quote}</h2>
+        <h2>{props.name}</h2>
+        <h2>{props.url}</h2>
+        <h2>{props.rating}</h2>
+        <h2>{props.minute}</h2>
+        <h2>{props.second}</h2>
+        <h2>{props.poster}</h2>
         <Button onClick={deleteHandler}>Delete</Button>
       </Card>
     </li>

@@ -30,13 +30,18 @@ const HistoryList = () => {
         }
       );
       const responseObj = await response.json();
-      const requests = [];
+      let requests = [];
       for (let key in responseObj) {
         requests.push({
           id: key,
           quote: responseObj[key].quote,
+          response: responseObj[key].response,
+          searchTime: responseObj[key].searchTime,
         });
       }
+      requests = requests.sort((a, b) => {
+        return b.searchTime - a.searchTime;
+      });
       dispatch(historyActions.initialize(requests));
     } catch (err) {
       console.log("Something went wrong");

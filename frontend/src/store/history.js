@@ -17,7 +17,9 @@ const historySlice = createSlice({
       state.requests = action.payload;
     },
     removeElement(state, action) {
-      state.requests = state.requests.filter((request) => request.id !== action.payload);
+      state.requests = state.requests.filter(
+        (request) => request.id !== action.payload
+      );
     },
   },
 });
