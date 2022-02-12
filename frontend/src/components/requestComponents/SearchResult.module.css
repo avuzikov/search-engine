@@ -103,3 +103,7 @@ body {
 .icons-yellow {
   color: rgb(190, 190, 71);
 }
+
+.link {
+  text-decoration: none;
+}
