@@ -1,8 +1,6 @@
-<style type="text/css">
-  body{
-  font-size: 20pt;
+@settings {
+font-size: 100;
 }
-</style>
 
 # Authors
 
