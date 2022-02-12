@@ -1,12 +1,8 @@
-@settings {
-font-size: 100;
-}
-
 # Authors
 
-## Alexander Uzikov(frontend on React, part of backend on Google Firebase)
+Alexander Uzikov(frontend on React, part of backend on Google Firebase)\
 
-## Nikolay Palchikov(machine learning, backend on Python)
+Nikolay Palchikov(machine learning, backend on Python)\
 
 # Description
 
