@@ -46,7 +46,7 @@ const LoginForm = (props) => {
     formIsValid = true;
   }
 
-  const fromSubmissionHandler = (event) => {
+  const formSubmissionHandler = (event) => {
     event.preventDefault();
 
     if (!formIsValid) {
@@ -119,7 +119,7 @@ const LoginForm = (props) => {
     : `${classes["form-control"]}`;
 
   return (
-    <form onSubmit={fromSubmissionHandler}>
+    <form onSubmit={formSubmissionHandler}>
       <div className={emailInputClasses}>
         <label htmlFor="email">Your email</label>
         <input
