@@ -28,10 +28,10 @@ const SearchBox = () => {
     if (quote === "") {
       return;
     }
-    //send request to Nicos backend, get required parameters
-    let responseObj;
-    /*try {
-      const searchRequest = await fetch(path, {
+
+    try {
+      let responseObj;
+      /*const searchRequest = await fetch('path', {
         method: "GET",
         body: JSON.stringify({ quote: quote }),
         headers: {
@@ -39,23 +39,20 @@ const SearchBox = () => {
         },
       });
       responseObj = await searchRequest.json();
-    } catch (err) {
-      console.log(err);
-    }*/
-    //for now, everything except for the quote if predefined
-    responseObj = {
-      quote: "quote rehrewj  rewhwrehwehj rehjwrj reherhrehe",
-      name: "name",
-      minute: "30",
-      second: "15",
-    };
+*/
+      responseObj = {
+        quote: "Luk I am your batya",
+        name: "Star Wars Russian Edition",
+        minute: "23",
+        second: "59",
+      };
 
-    const obj = {
-      quote: quote,
-      response: responseObj,
-      searchTime: new Date().getTime(),
-    };
-    try {
+      const obj = {
+        quote: quote,
+        response: responseObj,
+        searchTime: new Date().getTime(),
+      };
+
       const response = await fetch(
         `${requestsPath}${uid}.json?auth=${idToken}`,
         {
@@ -80,6 +77,7 @@ const SearchBox = () => {
       console.log("Something went wrong");
       console.log(err);
     }
+    //for now, everything except for the quote if predefined
     requestRef.current.value = "";
   }
 

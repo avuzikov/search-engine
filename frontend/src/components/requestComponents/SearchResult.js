@@ -3,7 +3,7 @@ import Card from "../UI/Card";
 import classes from "./SearchResult.module.css";
 
 const SearchResult = (props) => {
-  console.log(props.response);
+  //console.log(props.response);
   return (
     <Card className={classes.card}>
       <div className={classes["quote--container"]}>
