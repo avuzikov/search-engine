@@ -1,8 +1,6 @@
 # Authors
 
-Alexander Uzikov (frontend on React, part of backend on Google Firebase)
-
-Clock-me (machine learning, backend on Python)
+Alexander Uzikov
 
 # Implementation details
 
