@@ -44,14 +44,10 @@ const SearchBox = () => {
     }*/
     //for now, everything except for the quote if predefined
     responseObj = {
-      quote: "quote",
+      quote: "quote rehrewj  rewhwrehwehj rehjwrj reherhrehe",
       name: "name",
-      url: "https://www.google.com",
-      rating: "9.8",
       minute: "30",
       second: "15",
-      poster:
-        "https://www.mensjournal.com/wp-content/uploads/2018/10/rambo-main-3.jpg?quality=86&strip=all",
     };
 
     const obj = {
