@@ -4,12 +4,6 @@ Alexander Uzikov (frontend on React, part of backend on Google Firebase)
 
 Clock-me (machine learning, backend on Python)
 
-# Description
-
-This project is an implementation of a website for a movie fan. Currently it allows to search movie by a quote and keeps a history of user requests.
-The deployed production build can be found here: LINK \
-Feel free to register your own account or use test@test.com 87654321 to log in.
-
 # Implementation details
 
 ## Frontend, main structure
@@ -34,5 +28,3 @@ The part of the website for authenticated users currently contains 3 pages (a se
 ### Firebase
 
 Google Firebase is used for authentication and storing data related to users. The NoSQL storage configured in a way that each user has a unique id and records with his requests. Each record consists of request, time of request and the result of search(name of the movie, rating, quote, time of the quote, poster and a link to IMDb).
-
-### Code structure
