@@ -31,21 +31,16 @@ const SearchBox = () => {
 
     try {
       let responseObj;
-      /*const searchRequest = await fetch('path', {
+      let url = new URL("127.0.0.1:8000");
+      url.searchParams.append("query", quote);
+      const searchRequest = await fetch(url, {
         method: "GET",
-        body: JSON.stringify({ quote: quote }),
         headers: {
           "Content-Type": "application/json",
         },
       });
       responseObj = await searchRequest.json();
-*/
-      responseObj = {
-        quote: "Luk I am your batya",
-        name: "Star Wars Russian Edition",
-        minute: "23",
-        second: "59",
-      };
+      console.log(responseObj);
 
       const obj = {
         quote: quote,

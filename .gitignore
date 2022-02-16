@@ -1,3 +1,10 @@
 frontend/node_modules
 frontend/build
 frontend/src/store/token_secret.js
+backend/env
+backend/*egg-info
+.DS_Store
+*.csv
+*.idea
+*__pycache__*
+backend/resources
