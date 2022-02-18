@@ -8,3 +8,6 @@ backend/*egg-info
 *.idea
 *__pycache__*
 backend/resources
+backend/dev
+__pycache__
+resources

@@ -31,20 +31,21 @@ const SearchBox = () => {
 
     try {
       let responseObj;
-      let url = new URL("127.0.0.1:8000");
+      let url = new URL("/find_film", "http://localhost:8000");
       url.searchParams.append("query", quote);
       const searchRequest = await fetch(url, {
         method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
       });
       responseObj = await searchRequest.json();
-      console.log(responseObj);
-
+      let responseOb = {
+        minute: responseObj.minute,
+        second: responseObj.second,
+        name: responseObj.title,
+        quote: responseObj.text,
+      }
       const obj = {
         quote: quote,
-        response: responseObj,
+        response: responseOb,
         searchTime: new Date().getTime(),
       };
 
@@ -63,7 +64,7 @@ const SearchBox = () => {
       const action = {
         id: idRequest.name,
         quote: quote,
-        response: responseObj,
+        response: responseOb,
         searchTime: new Date().getTime(),
       };
       dispatch(historyActions.addElement(action));
